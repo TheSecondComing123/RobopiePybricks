@@ -17,38 +17,43 @@ class Robot:
         self.left_motor = Motor(Port.A)
         self.right_motor = Motor(Port.E)
 
-    def clamp(self, value, min_value, max_value):
+    def _clamp(self, value, min_value, max_value):
         return max(min(value, max_value), min_value)
 
     def forward(self, degrees, speed=360, delay=0):
-        degrees = self.clamp(degrees, -self.MAX_FORWARD_DEGREES, self.MAX_FORWARD_DEGREES)
+        degrees = self._clamp(degrees, -self.MAX_FORWARD_DEGREES, self.MAX_FORWARD_DEGREES)
         self.left_motor.run_angle(-speed, degrees, then=Stop.COAST, wait=False)
         self.right_motor.run_angle(speed, degrees, then=Stop.COAST, wait=True)
+        
         wait(int((abs(degrees) / speed + delay - 1) * 1000))
 
     def turn(self, degrees, speed=360, delay=0):
-        degrees = self.clamp(degrees * 2, -self.MAX_TURN_DEGREES, self.MAX_TURN_DEGREES)
+        degrees = self._clamp(degrees * 2, -self.MAX_TURN_DEGREES, self.MAX_TURN_DEGREES)
         if degrees > 0:
             self.left_motor.run_angle(-speed, degrees, then=Stop.COAST, wait=False)
             self.right_motor.run_angle(speed, -degrees, then=Stop.COAST, wait=True)
         elif degrees < 0:
             self.left_motor.run_angle(speed, -degrees, then=Stop.COAST, wait=False)
             self.right_motor.run_angle(-speed, degrees, then=Stop.COAST, wait=True)
+        
         wait(int((abs(degrees) / speed + delay - 1) * 1000))
 
     def move_front_motor(self, degrees, speed=360):
-        degrees = self.clamp(degrees, -self.MAX_ARM_DEGREES, self.MAX_ARM_DEGREES)
+        degrees = self._clamp(degrees, -self.MAX_ARM_DEGREES, self.MAX_ARM_DEGREES)
         self.lift_arm_motor.run_angle(speed, degrees, then=Stop.HOLD, wait=True)
+        
         wait(250)
 
     def move_back_motor(self, degrees, speed=360):
-        degrees = self.clamp(degrees, -self.MAX_ARM_DEGREES, self.MAX_ARM_DEGREES)
+        degrees = self._clamp(degrees, -self.MAX_ARM_DEGREES, self.MAX_ARM_DEGREES)
         self.razor_blade_motor.run_angle(speed, degrees, then=Stop.HOLD, wait=True)
+        
         wait(250)
 
     def run_lift_arm(self, degrees, speed=1000, delay=0):
-        degrees = self.clamp(degrees, -self.MAX_ARM_DEGREES, self.MAX_ARM_DEGREES)
+        degrees = self._clamp(degrees, -self.MAX_ARM_DEGREES, self.MAX_ARM_DEGREES)
         self.lift_arm_motor.run_angle(speed, degrees, then=Stop.HOLD, wait=True)
+        
         wait(int((abs(degrees) / speed + delay - 1) * 1000))
 
     def reset_lift_arm_port(self):
