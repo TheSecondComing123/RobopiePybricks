@@ -1,1 +1,2 @@
-Robopie FLL 2025-2026 Season Code
+# Coding for Robopie First Lego League
+Robopie FLL 2025 Season Code
