@@ -15,7 +15,7 @@ robot.forward(45)
 robot.run_lift_arm(-360)
 robot.reset_lift_arm_port()
 
-# Coral
+# Coral 1
 robot.forward(-90)
 robot.turn(140)
 robot.forward(-90)
@@ -44,12 +44,19 @@ robot.forward(40)
 robot.turn(180)
 robot.forward(48)
 robot.run_lift_arm(-360)
-robot.turn(-18)
+robot.turn(-20)
 robot.reset_lift_arm_port()
 
-# Back to home base left
+# Scuba Diver
 robot.forward(-90)
 robot.turn(25)
+robot.run_lift_arm(-100)
 robot.forward(-270)
-robot.turn(120)
-robot.forward(360)
+robot.turn(-150)
+robot.forward(30)
+robot.run_lift_arm(300)
+
+#Back to home base
+robot.forward(-60)
+robot.turn(100)
+robot.forward(-360)
