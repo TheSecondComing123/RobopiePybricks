@@ -2,7 +2,7 @@ from boilerplate import *
 
 robot = Robot()
 
-# Alignment: 2
+# Alignment: 3
 # Shark
 robot.reset_lift_arm_port()
 robot.forward(180, speed_mm_s=720)
