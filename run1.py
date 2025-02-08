@@ -1,6 +1,6 @@
 from boilerplate import *
 
-robot=Robot()
+robot = Robot()
 
 robot.forward(169)
 robot.turn(115)
