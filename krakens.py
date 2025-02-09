@@ -1,0 +1,16 @@
+from boilerplate import *
+
+robot = Robot()
+# alignment of four from the black line to the left. :)
+robot.forward(100)
+robot.turn(45)
+robot.forward(150)
+robot.turn(-45)
+robot.forward(100, speed_mm_s=200)
+robot.turn(80)
+robot.forward(140, speed_mm_s=200)
+robot.forward(-110)
+robot.turn(-90)
+robot.forward(-90)
+robot.turn(45)
+robot.forward(-300)
