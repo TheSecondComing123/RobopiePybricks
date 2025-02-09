@@ -1,7 +1,7 @@
 from boilerplate import *
 
 robot = Robot()
-# alignment of four from the black line to the left. :)
+# alignment: four from the black line to the left. :)
 robot.forward(100)
 robot.turn(45)
 robot.forward(150)
