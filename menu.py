@@ -2,7 +2,7 @@ from pybricks.hubs import PrimeHub
 from pybricks.parameters import Button
 from pybricks.tools import wait
 
-menu_options = ("1", "2")
+menu_options = ("1", "2", "3")
 
 hub = PrimeHub()
 
@@ -43,9 +43,9 @@ while True:
     
     if selected == "1":
         import run1
-        run1.main()  # Run the main function in run1
     elif selected == "2":
         import run4
-        run4.main()  # Run the main function in run4
+    elif selected == "3":
+        import krakens
 
     wait(1000)  # Short delay before the menu shows again
