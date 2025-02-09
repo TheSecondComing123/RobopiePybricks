@@ -1,5 +1,6 @@
 from boilerplate import *
 
+# This does Sonar Discovery and takes the hoop out
 robot = Robot()
 robot.run_lift_arm(-360)
 robot.forward(100)
