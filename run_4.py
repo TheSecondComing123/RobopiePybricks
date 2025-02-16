@@ -53,7 +53,8 @@ robot.turn(25)
 robot.run_lift_arm(-100)
 robot.forward(-270)
 robot.turn(-150)
-robot.forward(30)
+robot.run_lift_arm(-50)
+robot.forward(40)
 robot.run_lift_arm(300)
 
 #Back to home base
