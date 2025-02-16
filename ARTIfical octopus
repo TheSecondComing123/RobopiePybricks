@@ -1,0 +1,21 @@
+from boilerplate import *
+
+robot = Robot()
+# aligne from casual one AND GOES TO OTHER SIDE
+robot.run_lift_arm(-250)
+robot.forward(126)
+robot.turn(-90)
+robot.forward(200)
+robot.turn(-35)
+robot.forward(80)
+robot.turn(40, 600)
+robot.forward(60)
+robot.turn(10)
+robot.forward(100)
+robot.forward(-50)
+robot.run_lift_arm(90)
+robot.forward(-50)
+robot.turn(40)
+robot.forward(140)
+robot.turn(-65)
+robot.forward(635)
