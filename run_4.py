@@ -2,14 +2,14 @@ from boilerplate import *
 
 robot = Robot()
 
-# Alignment: 3
+# Alignment: right of aligner on left side of second black line (optional: 1mm to the left)
 # Shark
 robot.reset_lift_arm_port()
 robot.forward(180, speed_mm_s=720)
 robot.turn(40)
 robot.forward(240)
 robot.turn(-45)
-robot.forward(57.5)
+robot.forward(50)
 robot.turn(-40)
 robot.forward(45)
 robot.run_lift_arm(-360)
@@ -60,4 +60,4 @@ robot.run_lift_arm(300)
 #Back to home base
 robot.forward(-60)
 robot.turn(100)
-robot.forward(-360)
+robot.forward(-450)
