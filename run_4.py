@@ -2,7 +2,7 @@ from boilerplate import *
 
 robot = Robot()
 
-# Alignment: right of aligner on left side of second black line (optional: 1mm to the left)
+# Alignment: 2.5 to the right of left home base (jacob knows)
 # Shark
 robot.reset_lift_arm_port()
 robot.forward(180, speed_mm_s=720)
@@ -16,9 +16,9 @@ robot.run_lift_arm(-360)
 robot.reset_lift_arm_port()
 
 # Coral 1
-robot.forward(-90)
+robot.forward(-100)
 robot.turn(140)
-robot.forward(-90)
+robot.forward(-100)
 
 # Coral
 robot.forward(30)
@@ -46,14 +46,16 @@ robot.forward(48)
 robot.run_lift_arm(-360)
 robot.turn(-20)
 robot.reset_lift_arm_port()
+robot.reset_lift_arm_port()
+
 
 # Scuba Diver
 robot.forward(-90)
 robot.turn(25)
 robot.run_lift_arm(-100)
 robot.forward(-270)
-robot.turn(-150)
-robot.run_lift_arm(-50)
+robot.turn(-160)
+robot.run_lift_arm(-75)
 robot.forward(40)
 robot.run_lift_arm(300)
 
