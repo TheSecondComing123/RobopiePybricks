@@ -9,10 +9,6 @@ class Robot:
     MAX_ARM_DEGREES = 400
 
     def __init__(self):
-        """
-        Initialize the Robot with drive motors, an arm motor, and a razor blade motor.
-        Uses standard FLL Spike hub and Spike Large wheels.
-        """
         self.left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
         self.right_motor = Motor(Port.E)
         self.lift_arm_motor = Motor(Port.D)
@@ -32,7 +28,6 @@ class Robot:
     def forward(self, distance_mm, speed_mm_s=None, delay=0, wait=True):
         """
         Drive forward for a specified distance in millimeters.
-        Optionally update the straight-line speed.
         """
         if speed_mm_s is not None:
             self.straight_speed_mm_s = speed_mm_s
@@ -45,7 +40,6 @@ class Robot:
     def turn(self, angle_deg, turn_rate_deg_s=None, delay=0, wait=True):
         """
         Turn the robot by a specified angle in degrees.
-        Optionally update the turning rate.
         """
         if turn_rate_deg_s is not None:
             self.turn_rate_deg_s = turn_rate_deg_s
@@ -107,24 +101,3 @@ class Robot:
         self.right_motor.stop()
         self.lift_arm_motor.stop()
         self.razor_blade_motor.stop()
-
-    def emergency_stop(self):
-        """
-        Immediately halt all robot motion.
-        """
-        self.stop()
-
-    def log_status(self):
-        """
-        Return a dictionary with current status including drive base and motor angles.
-        """
-        status = {
-            "drive_distance": self.drive_base.distance(),
-            "drive_angle": self.drive_base.angle(),
-            "left_motor_angle": self.left_motor.angle(),
-            "right_motor_angle": self.right_motor.angle(),
-            "lift_arm_angle": self.lift_arm_motor.angle(),
-            "razor_blade_angle": self.razor_blade_motor.angle()
-        }
-        
-        return status
