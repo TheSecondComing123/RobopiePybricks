@@ -59,7 +59,7 @@ robot.run_lift_arm(-75)
 robot.forward(40)
 robot.run_lift_arm(300)
 
-#Back to home base
+# Back to home base
 robot.forward(-60)
 robot.turn(100)
 robot.forward(-450)
